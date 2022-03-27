@@ -14,8 +14,9 @@ import (
 	"pancake.maker/handler"
 )
 
+const port = 50051
+
 func main() {
-	port := 50051
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
 	if err != nil {
 		log.Fatalf("failed ot listen: %v", err)
@@ -23,6 +24,7 @@ func main() {
 
 	server := grpc.NewServer()
 	api.RegisterPancakeBakerServiceServer(server, handler.NewBakerHandler())
+	// To debug on grpc_cli.
 	reflection.Register(server)
 
 	go func() {

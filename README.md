@@ -14,6 +14,17 @@
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+# gRPC Demo
+
+This is [スターティングgRPC](https://www.amazon.co.jp/dp/B087R87L6Z) based sample codes.
+
+### Directory structure
+
+- example
+    - codes of Chapter 2
+- src
+    - codes of Chapter 3 
+
 # Preconditions
 
 ### Install grpc_cli

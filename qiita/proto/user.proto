@@ -1,0 +1,21 @@
+syntax = "proto3";
+package user.add;
+
+option go_package = "gen/api";
+
+service UserGetService {
+  rpc Get(UserRequest) returns (UserResponse) {}
+}
+
+message User {
+  int32 id = 1;
+  string name = 2;
+}
+
+message UserRequest {
+  int32 id = 1;
+}
+
+message UserResponse {
+  User user = 1;
+}

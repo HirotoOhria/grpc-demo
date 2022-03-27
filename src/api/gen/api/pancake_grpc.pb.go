@@ -55,17 +55,16 @@ func (c *pancakeBakerServiceClient) Report(ctx context.Context, in *ReportReques
 }
 
 // PancakeBakerServiceServer is the server API for PancakeBakerService service.
-// All implementations must embed UnimplementedPancakeBakerServiceServer
+// All implementations should embed UnimplementedPancakeBakerServiceServer
 // for forward compatibility
 type PancakeBakerServiceServer interface {
 	// Bake pancakes on specified menu.
 	Bake(context.Context, *BakeRequest) (*BakeResponse, error)
 	// Returns number of pancakes baked for each menu.
 	Report(context.Context, *ReportRequest) (*ReportResponse, error)
-	mustEmbedUnimplementedPancakeBakerServiceServer()
 }
 
-// UnimplementedPancakeBakerServiceServer must be embedded to have forward compatible implementations.
+// UnimplementedPancakeBakerServiceServer should be embedded to have forward compatible implementations.
 type UnimplementedPancakeBakerServiceServer struct {
 }
 
@@ -75,7 +74,6 @@ func (UnimplementedPancakeBakerServiceServer) Bake(context.Context, *BakeRequest
 func (UnimplementedPancakeBakerServiceServer) Report(context.Context, *ReportRequest) (*ReportResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method Report not implemented")
 }
-func (UnimplementedPancakeBakerServiceServer) mustEmbedUnimplementedPancakeBakerServiceServer() {}
 
 // UnsafePancakeBakerServiceServer may be embedded to opt out of forward compatibility for this service.
 // Use of this interface is not recommended, as added methods to PancakeBakerServiceServer will

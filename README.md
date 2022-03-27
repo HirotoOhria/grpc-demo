@@ -1,6 +1,6 @@
-# Exec
+# Preconditions
 
-## install grpc_cli
+### Install grpc_cli
 
 ```shell
 $ brew tap grpc/grpc
@@ -8,7 +8,9 @@ $ brew tap grpc/grpc
 $ brew install grpc
 ```
 
-## run application
+# Launch Application
+
+### run application
 
 ```shell
 $ docker-compose up
@@ -16,7 +18,7 @@ $ docker-compose up
 
 # Call gRPC
 
-## service list
+## check service list
 
 ```shell
 $ grpc_cli ls localhost:50051 pancake.maker.PancakeBakerService -l
@@ -49,4 +51,14 @@ Rpc succeeded with OK status
 $ grpc_cli call localhost:50051 pancake.maker.PancakeBakerService.Bake 'menu: 0'
 connecting to localhost:50051
 Rpc failed with status code 3, error message: パンケーキを選択してください
+```
+
+# Development
+
+### Generate codes
+
+```shell
+$ docker-compose exec proto bash
+
+$ protoc --go_out=api --go-gropc_out=api --go-grpc_opt=require_unimplemented_servers=false proto/*.proto
 ```

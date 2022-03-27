@@ -1,3 +1,19 @@
+<!-- START doctoc generated TOC please keep comment here to allow auto update -->
+<!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+**Table of Contents**
+
+- [Preconditions](#preconditions)
+    - [Install grpc_cli](#install-grpc_cli)
+- [Launch Application](#launch-application)
+    - [run application](#run-application)
+- [Call gRPC](#call-grpc)
+  - [check service list](#check-service-list)
+  - [call Bake](#call-bake)
+- [Development](#development)
+    - [Generate codes](#generate-codes)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
 # Preconditions
 
 ### Install grpc_cli

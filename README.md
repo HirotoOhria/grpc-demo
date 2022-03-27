@@ -2,6 +2,8 @@
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 **Table of Contents**
 
+- [gRPC Demo](#grpc-demo)
+    - [Directory structure](#directory-structure)
 - [Preconditions](#preconditions)
     - [Install grpc_cli](#install-grpc_cli)
 - [Launch Application](#launch-application)

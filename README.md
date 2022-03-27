@@ -22,11 +22,11 @@ This is [スターティングgRPC](https://www.amazon.co.jp/dp/B087R87L6Z) base
 
 ### Directory structure
 
-- example
+- example/
     - codes of Chapter 2
-- qiita
+- qiita/
     - codes of [qiita example](https://qiita.com/drafts/a4e06a3e7e8c8dfef4df) 
-- src
+- src/
     - codes of Chapter 3 
 
 # Preconditions
@@ -91,5 +91,5 @@ Rpc failed with status code 3, error message: パンケーキを選択してく�
 ```shell
 $ docker-compose exec proto bash
 
-$ protoc --go_out=api --go-gropc_out=api --go-grpc_opt=require_unimplemented_servers=false proto/*.proto
+$ protoc --go_out=api --go-grpc_out=api --go-grpc_opt=require_unimplemented_servers=false proto/*.proto
 ```

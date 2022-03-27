@@ -14,7 +14,7 @@ import (
 	"pancake.maker/handler"
 )
 
-const port = 50051
+const port = 50052
 
 func main() {
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", port))

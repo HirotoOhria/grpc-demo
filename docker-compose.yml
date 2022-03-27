@@ -12,3 +12,13 @@ services:
     volumes:
       - ./src:/go/src
     tty: true
+  qiita:
+    container_name: qiita
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "50052:50052"
+    volumes:
+      - ./qiita:/go/src
+    tty: true

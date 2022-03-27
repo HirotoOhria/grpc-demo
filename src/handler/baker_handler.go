@@ -8,7 +8,6 @@ import (
 
 	"github.com/golang/protobuf/ptypes/timestamp"
 	"google.golang.org/grpc/codes"
-	pb "google.golang.org/grpc/examples/helloworld/helloworld"
 	"google.golang.org/grpc/status"
 
 	"pancake.maker/api/gen/api"
@@ -20,7 +19,6 @@ func init() {
 
 type bakerHandler struct {
 	report *report
-	pb.UnimplementedGreeterServer
 }
 
 type report struct {

@@ -1,0 +1,13 @@
+# See https://docs.docker.com/compose/compose-file/compose-file-v3/
+version: "3.9"
+
+services:
+  proto:
+    container_name: proto
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    working_dir: /go/src
+    volumes:
+      - ./src:/go/src
+    tty: true

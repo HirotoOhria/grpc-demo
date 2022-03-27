@@ -7,6 +7,8 @@ import (
 	"os"
 	"os/signal"
 
+	grpc_zap "github.com/grpc-ecosystem/go-grpc-middleware/logging/zap"
+	"go.uber.org/zap"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 
@@ -19,10 +21,16 @@ const port = 50051
 func main() {
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
 	if err != nil {
-		log.Fatalf("failed ot listen: %v", err)
+		log.Fatalf("failed to listen: %v", err)
 	}
 
-	server := grpc.NewServer()
+	logger, err := zap.NewProduction()
+	if err != nil {
+		log.Fatalf("failed to create logger: %v", err)
+	}
+	grpc_zap.ReplaceGrpcLoggerV2(logger)
+
+	server := grpc.NewServer(genInterceptor(logger))
 	api.RegisterPancakeBakerServiceServer(server, handler.NewBakerHandler())
 	// To debug on grpc_cli.
 	reflection.Register(server)
@@ -37,4 +45,10 @@ func main() {
 	<-quit
 	log.Println("stopping gRPC server...")
 	server.GracefulStop()
+}
+
+func genInterceptor(logger *zap.Logger) grpc.ServerOption {
+	return grpc.UnaryInterceptor(
+		grpc_zap.UnaryServerInterceptor(logger),
+	)
 }

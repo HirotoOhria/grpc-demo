@@ -6,7 +6,7 @@ import (
 	"google.golang.org/grpc/codes"
 	"google.golang.org/grpc/status"
 
-	"pancake.maker/api/gen/api"
+	"user/api/gen/api"
 )
 
 type userHandler struct{}

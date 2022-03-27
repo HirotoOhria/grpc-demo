@@ -10,8 +10,8 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
 
-	"pancake.maker/api/gen/api"
-	"pancake.maker/handler"
+	"user/api/gen/api"
+	"user/handler"
 )
 
 const port = 50052

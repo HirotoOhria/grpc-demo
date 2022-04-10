@@ -22,12 +22,10 @@ This is [スターティングgRPC](https://www.amazon.co.jp/dp/B087R87L6Z) base
 
 ### Directory structure
 
-- example/
-    - codes of Chapter 2
+- starting-grpc/
+    - codes of スターティングgRPC
 - qiita/
     - codes of [qiita example](https://qiita.com/drafts/a4e06a3e7e8c8dfef4df) 
-- src/
-    - codes of Chapter 3 
 
 # Preconditions
 

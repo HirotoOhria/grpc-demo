@@ -10,7 +10,7 @@ services:
     ports:
       - "50051:50051"
     volumes:
-      - ./src:/go/src
+      - ./chapter3:/go/chapter3
     tty: true
   qiita:
     container_name: qiita
@@ -20,5 +20,5 @@ services:
     ports:
       - "50052:50052"
     volumes:
-      - ./qiita:/go/src
+      - ./qiita:/go/chapter3
     tty: true

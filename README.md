@@ -87,7 +87,7 @@ Rpc failed with status code 3, error message: パンケーキを選択してく�
 ### Generate codes
 
 ```shell
-$ docker-compose exec proto bash
+$ docker-compose exec chap3 bash
 
 $ protoc --go_out=api --go-grpc_out=api --go-grpc_opt=require_unimplemented_servers=false proto/*.proto
 ```

@@ -2,23 +2,23 @@
 version: "3.9"
 
 services:
-  proto:
-    container_name: proto
+  chap3:
+    container_name: chap3
     build:
       context: .
-      dockerfile: docker/Dockerfile
+      dockerfile: docker/chapter3/Dockerfile
     ports:
       - "50051:50051"
     volumes:
-      - ./chapter3:/go/chapter3
+      - ./starting-grpc/chapter3:/go/src
     tty: true
   qiita:
     container_name: qiita
     build:
       context: .
-      dockerfile: docker/Dockerfile
+      dockerfile: docker/chapter3/Dockerfile
     ports:
       - "50052:50052"
     volumes:
-      - ./qiita:/go/chapter3
+      - ./qiita:/go/src
     tty: true

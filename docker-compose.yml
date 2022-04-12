@@ -12,6 +12,16 @@ services:
     volumes:
       - ./starting-grpc/chapter3:/go/src
     tty: true
+  chap6:
+    container_name: chap6
+    build:
+      context: .
+      dockerfile: docker/chapter6/Dockerfile
+    ports:
+      - "50053:50053"
+    volumes:
+      - ./starting-grpc/chapter6:/go/src
+    tty: true
   qiita:
     container_name: qiita
     build:
